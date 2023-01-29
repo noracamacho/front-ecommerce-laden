@@ -1,0 +1,92 @@
+.product__card {
+    width: 100%;
+    max-width: 290px;
+    border: 1px solid #aaa7;
+    border-radius: 10px;
+    /* margin-bottom: 0.5rem; */
+    cursor: pointer;
+    /* transition: transform 200ms ease; */
+}
+/* .product__card:hover {
+    transform: scale(1.05);
+    transition: all .06s;
+} */
+.product__card__header {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-bottom: 1px solid #aaa7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.product__card__img {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transition: all .8s ease;
+}
+.product__card__img:nth-child(1) {
+    opacity: 1;
+    transition: all .8s;
+}
+.product__card__img:nth-child(2) {
+    opacity: 0;
+    transition: all .8s ease;
+}
+.product__card__header:hover .product__card__img:nth-child(1) {
+    opacity: 0;
+    transition: all .8s ease;
+}
+.product__card__header:hover .product__card__img:nth-child(2) {
+    opacity: 1;
+    transition: all .8s;
+}
+.product__card__body {
+    padding: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 25px;
+}
+.product__card__upper__body {
+    grid-column: span 2;
+}
+.product__card__brand {
+    font-size: 0.9rem;
+    color: #8d8d8d99;
+    font-weight: 700;
+}
+.product__card__title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    transform: translateX(13px);
+    /* grid-column: span 2; */
+}
+.product__card__upper__body,
+.product__card__price__container {
+    display: grid;
+    gap: 3px;
+}
+.product__card__price__label {
+    font-size: 0.9rem;
+    color: #8d8d8d99;
+    font-weight: 700;
+}
+.product__card__price {
+    font-weight: 500;
+    transform: translateX(13px);
+}
+.product__card__btn {
+    width: 52px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    justify-self: end;
+    background-color: #f85555;
+    color: white;
+    transition: transform 100ms ease;
+}
+.product__card__btn:hover {
+    filter: brightness(1.2);
+}
