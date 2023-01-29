@@ -61,6 +61,7 @@
 .product__card__title {
     font-size: 1.1rem;
     font-weight: 500;
+    min-height: 6.6rem;
     transform: translateX(13px);
     /* grid-column: span 2; */
 }
