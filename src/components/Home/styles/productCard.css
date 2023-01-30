@@ -1,6 +1,6 @@
 .product__card {
     width: 100%;
-    max-width: 350px;
+    max-width: 330px;
     border: 1px solid #aaa7;
     border-radius: 10px;
     /* margin-bottom: 0.5rem; */
@@ -88,7 +88,9 @@
     background-color: black;
     color: white;
     transition: transform 100ms ease;
+    outline: 2px solid rgb(47, 46, 46);
 }
 .product__card__btn:hover {
     filter: brightness(1.2);
+    background-color: rgb(47, 46, 46);
 }
