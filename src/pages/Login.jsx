@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+    const navigate = useNavigate()
     // React-hook-form
     const {handleSubmit, register, reset} = useForm();
 
@@ -13,8 +16,9 @@ const Login = () => {
         axios.post(URL, formData)
             .then(response => {
                 console.log('login', response);
-                // console.log('token', response.data.token);
+                console.log('token', response.data.token);
                 localStorage.setItem('token', response.data.token);
+                navigate('/');
             })
             .catch(err => console.log('errorLogin', err))
     }

@@ -1,6 +1,6 @@
 .product__card {
     width: 100%;
-    max-width: 290px;
+    max-width: 350px;
     border: 1px solid #aaa7;
     border-radius: 10px;
     /* margin-bottom: 0.5rem; */
@@ -61,7 +61,7 @@
 .product__card__title {
     font-size: 1.1rem;
     font-weight: 500;
-    min-height: 6.6rem;
+    min-height: 5rem;
     transform: translateX(13px);
     /* grid-column: span 2; */
 }
@@ -84,7 +84,8 @@
     aspect-ratio: 1;
     border-radius: 50%;
     justify-self: end;
-    background-color: #f85555;
+    /* background-color: #f85555; */
+    background-color: black;
     color: white;
     transition: transform 100ms ease;
 }

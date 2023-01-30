@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getProductsByCategoryId, getAllProducts } from '../../store/slices/products.slice'
+import { getProductsByCategoryId, getAllProducts } from '../../store/slices/products.slice';
+import './styles/categoryFilter.css'
 
-const CategoryFilter = () => {
+const CategoryFilter = ({setInputSearchValue}) => {
 
     const [categories, setCategories] = useState();
 
@@ -16,26 +17,26 @@ const CategoryFilter = () => {
 
     const dispatch = useDispatch();
 
-    // console.log(categories);
-
     const handleCategory = (id) => {
         // Execute the thunk
-        dispatch(getProductsByCategoryId(id))
+        dispatch(getProductsByCategoryId(id));
+        setInputSearchValue('');
     }
 
     const handleAllCategories = () => {
         // Execute the thunk
-        dispatch(getAllProducts())
+        dispatch(getAllProducts());
+        setInputSearchValue('');
     }
 
   return (
     <section>
         <h3>Categories</h3>
         <ul>
-            <li onClick={handleAllCategories}>All products</li>
+            <li className='categogy__filter__id' onClick={handleAllCategories}>All products</li>
             {
                 categories?.map(category => (
-                    <li onClick={() => handleCategory(category.id)} key={category.id}>{category.name}</li>
+                    <li className='categogy__filter__id' onClick={() => handleCategory(category.id)} key={category.id}>{category.name}</li>
                 ))
             }
         </ul>

@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 
 // ? Como la info viene de una petición asincronica se debe usar el encadenamieto opcional
 const ProductDescription = ({product}) => {
-    console.log('product', product);
+    // console.log('product', product);
 
     const [quantity, setQuantity] = useState(1);
 
@@ -33,7 +33,7 @@ const ProductDescription = ({product}) => {
         }
         axios.post(URL, data, loadConfiguration())
             .then(response => {
-                console.log(response)
+                // console.log(response)
                 // Execute thunk
                 dispatch(getUserCart())
             })

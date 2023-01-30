@@ -6,9 +6,10 @@ const AppNavBar2 = () => {
     <header>
         <nav>
             <ul>
-                <li><Link to='/'>E-commerce</Link></li>
+                <li><Link to='/'>e-commerce</Link></li>
                 <li><Link to='/login'>Login</Link></li>
                 <li><Link to='/cart'>Cart</Link></li>
+                <li><Link to='/purchases'>Purchases</Link></li>
             </ul>
         </nav>
     </header>

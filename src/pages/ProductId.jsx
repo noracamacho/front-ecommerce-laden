@@ -26,11 +26,11 @@ const ProductDetails = () => {
         if(allProductsGlobal && product){
             const pivot = allProductsGlobal.filter(prod => prod?.categoryId === product?.categoryId && prod?.title !== product?.title);
             setSimilarProducts(pivot);
-            console.log('similar', similarProducts);
+            // console.log('similar', similarProducts);
         }
     }, [allProductsGlobal, product])
 
-    console.log(product);
+    // console.log(product);
 
   return (
     <div>
