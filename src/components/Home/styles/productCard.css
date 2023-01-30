@@ -88,7 +88,6 @@
     background-color: black;
     color: white;
     transition: transform 100ms ease;
-    outline: 2px solid rgb(47, 46, 46);
 }
 .product__card__btn:hover {
     filter: brightness(1.2);
