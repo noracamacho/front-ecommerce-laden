@@ -4,6 +4,8 @@ import AccordionFilter from '../components/Home/AcordionFilter';
 import CategoryFilter from '../components/Home/CategoryFilter';
 import PriceFilter from '../components/Home/PriceFilter';
 import ProductCard from '../components/Home/ProductCard';
+import SearchIcon from '@mui/icons-material/Search';
+
 import './styles/home.css'
 
 const Home = () => {
@@ -32,7 +34,10 @@ const Home = () => {
 
   return (
     <div className='home'>
-        <input value={inputSearchValue} onChange={handleChange} className='searchInput' type="text" placeholder='What are you looking for?' />
+        <div className='search__section'>
+            <input value={inputSearchValue} onChange={handleChange} className='searchInput' type="text" placeholder='What are you looking for?' />
+            <SearchIcon className='search__icon' />
+        </div>
         <AccordionFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo} setInputSearchValue={setInputSearchValue}/>
         {/* <PriceFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo}/> */}
         {/* <CategoryFilter setInputSearchValue={setInputSearchValue} /> */}
