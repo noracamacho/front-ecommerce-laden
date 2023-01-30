@@ -2,14 +2,11 @@ import React, { useState } from 'react'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import loadConfiguration from "../../utils/loadConfiguration";
 import axios from 'axios';
-import { getUserCart } from '../../store/slices/cart.slice';
+import { getUserCartThunk } from '../../store/slices/cart.slice';
 import { useDispatch } from 'react-redux';
-
-// import productsSlice from '../../store/slices/products.slice'
 
 // ? Como la info viene de una petición asincronica se debe usar el encadenamieto opcional
 const ProductDescription = ({product}) => {
-    // console.log('product', product);
 
     const [quantity, setQuantity] = useState(1);
 
@@ -35,7 +32,7 @@ const ProductDescription = ({product}) => {
             .then(response => {
                 // console.log(response)
                 // Execute thunk
-                dispatch(getUserCart())
+                dispatch(getUserCartThunk())
             })
             .catch(error => console.log('error', error))
     }

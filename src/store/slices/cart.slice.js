@@ -16,7 +16,7 @@ export const { setCartGlobal } = cartSlice.actions
 export default cartSlice.reducer
 
 //? Redux Thunk
-export const getUserCart = () => (dispatch) => {
+export const getUserCartThunk = () => (dispatch) => {
     const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart'
     axios.get(URL, loadConfiguration())
         .then(response => dispatch(setCartGlobal(response.data)))

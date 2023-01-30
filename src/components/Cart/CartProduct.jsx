@@ -4,7 +4,7 @@ import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined
 import './cartProduct.css';
 import axios from 'axios';
 import loadConfiguration from '../../utils/loadConfiguration';
-import { getUserCart } from '../../store/slices/cart.slice';
+import { getUserCartThunk } from '../../store/slices/cart.slice';
 import { useDispatch } from 'react-redux';
 
 const CartProduct = ({product}) => {
@@ -18,7 +18,7 @@ const CartProduct = ({product}) => {
       .then(response => {
         console.log(response)
         // Execute thunk
-        dispatch(getUserCart())
+        dispatch(getUserCartThunk())
       })
       .catch(error => console.log(error))
   }

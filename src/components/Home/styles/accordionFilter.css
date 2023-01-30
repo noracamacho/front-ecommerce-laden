@@ -1,0 +1,55 @@
+.accordion {
+    border: none !important;
+}
+
+.accordion__filter {
+    position: relative;
+    max-width: 15rem !important;
+    margin-left: 2rem;
+    top: 10rem;
+}
+.accordion-header {
+    border-bottom: 2px solid lightgrey;
+    font-weight: bold;
+}
+.accordion-button{
+    font-size: 1.2rem !important;
+}
+.accordion-button:focus{
+    border: none !important;
+    border-color: transparent !important;
+    outline: 0;
+    box-shadow:none !important;
+}
+.accordion-button:not(.collapsed),
+.accordion-header {
+    background-color: white !important;
+}
+.accordion-flush .accordion-item:first-child {
+    border-top: 0;
+}
+.accordion-item {
+    border: none !important;
+}
+.price__label {
+    width: 2.6rem;
+}
+.accordion-body {
+    height: auto;
+    margin-bottom: 5rem;
+}
+.price__filter__input {
+    width: 9.9rem;
+}
+.filter__price__btn {
+    padding: 0.7rem;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+    float: right;
+    /* position: absolute;
+    right: 1rem; */
+}
+button {
+    border: none;
+}

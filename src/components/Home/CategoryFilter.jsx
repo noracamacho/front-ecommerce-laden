@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Accordion from 'react-bootstrap/Accordion';
 import { useDispatch } from 'react-redux';
-import { getProductsByCategoryId, getAllProducts } from '../../store/slices/products.slice';
+import { getProductsByCategoryIdThunk, getAllProductsThunk } from '../../store/slices/products.slice';
 import './styles/categoryFilter.css'
 
 const CategoryFilter = ({setInputSearchValue}) => {
@@ -19,19 +20,24 @@ const CategoryFilter = ({setInputSearchValue}) => {
 
     const handleCategory = (id) => {
         // Execute the thunk
-        dispatch(getProductsByCategoryId(id));
+        dispatch(getProductsByCategoryIdThunk(id));
         setInputSearchValue('');
     }
 
     const handleAllCategories = () => {
         // Execute the thunk
-        dispatch(getAllProducts());
+        dispatch(getAllProductsThunk());
         setInputSearchValue('');
     }
 
   return (
-    <section>
-        <h3>Categories</h3>
+    <section className='accordion__filter'>
+    <Accordion defaultActiveKey={['0']} alwaysOpen flush>
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Categories</Accordion.Header>
+        <Accordion.Body>
+    {/* <section> */}
+        {/* <h3>Categories</h3> */}
         <ul>
             <li className='categogy__filter__id' onClick={handleAllCategories}>All products</li>
             {
@@ -40,6 +46,10 @@ const CategoryFilter = ({setInputSearchValue}) => {
                 ))
             }
         </ul>
+    {/* </section> */}
+    </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
     </section>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import AccordionFilter from '../components/Home/AcordionFilter';
 import CategoryFilter from '../components/Home/CategoryFilter';
 import PriceFilter from '../components/Home/PriceFilter';
 import ProductCard from '../components/Home/ProductCard';
@@ -18,11 +19,8 @@ const Home = () => {
         }
     },[products])
 
-    /* 
-        Seach input will filter all the products that contain the users input, the search is 
-        made in the product title, brand and category to avoid missing products in  any way
-
-    */
+    /*  Seach input will filter all the products that contain the users input, the search is 
+        made in the product title, brand and category to avoid missing products in  any way */
     const handleChange = e => {
         const inputValue = e.target.value.toLowerCase().trim();
         const inputSearch = products?.filter(prod => prod.title.toLowerCase().includes(inputValue) || prod.brand.toLowerCase().includes(inputValue) || prod.category.name.toLowerCase().includes(inputValue));
@@ -33,15 +31,15 @@ const Home = () => {
     const productsFilteredByPrice = searchedProducts?.filter(prod => +prod.price >= filterFrom && +prod.price <= filterTo)
 
   return (
-    <div>
+    <div className='home'>
         <input value={inputSearchValue} onChange={handleChange} className='searchInput' type="text" placeholder='What are you looking for?' />
-        <PriceFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo}/>
-        <CategoryFilter setInputSearchValue={setInputSearchValue} />
+        <AccordionFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo} setInputSearchValue={setInputSearchValue}/>
+        {/* <PriceFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo}/> */}
+        {/* <CategoryFilter setInputSearchValue={setInputSearchValue} /> */}
         <div className='products__container'>
             { 
                 productsFilteredByPrice && productsFilteredByPrice?.length !== 0 ?
-
-                // Renders all the products once they are filtered by price
+                // Renders all the products after they are filtered by price
                     productsFilteredByPrice?.map(product => (
                         <ProductCard key={product.id} product={product} />
                     ))

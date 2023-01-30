@@ -9,22 +9,22 @@ export const productsSlice = createSlice({
     }
 })
 
-export const { setProductsGlobal } = productsSlice.actions;
-
-export default productsSlice.reducer;
-
 //? Thunk get all products
-export const getAllProducts = () => (dispatch) => {
+export const getAllProductsThunk = () => (dispatch) => {
     const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/products'
     axios.get(URL)
-        .then(response => dispatch(setProductsGlobal(response.data)))
-        .catch(error => console.log('error', error))
+    .then(response => dispatch(setProductsGlobal(response.data)))
+    .catch(error => console.log('error', error))
 }
 
 // ? Thunk to get products by category
-export const getProductsByCategoryId = (id) => (dispatch) => {
+export const getProductsByCategoryIdThunk = (id) => (dispatch) => {
     const URL = `https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${id}`
     axios.get(URL)
-        .then(response => dispatch(setProductsGlobal(response.data)))
-        .catch(error => console.log('error', error))
+    .then(response => dispatch(setProductsGlobal(response.data)))
+    .catch(error => console.log('error', error))
 }
+
+export const { setProductsGlobal } = productsSlice.actions;
+
+export default productsSlice.reducer;

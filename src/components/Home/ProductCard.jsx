@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import loadConfiguration from '../../utils/loadConfiguration';
 import './styles/productCard.css';
-import { getUserCart } from '../../store/slices/cart.slice';
+import { getUserCartThunk } from '../../store/slices/cart.slice';
 import { useDispatch } from 'react-redux';
 
 const ProductsCard = ({product}) => {
@@ -30,7 +30,7 @@ const ProductsCard = ({product}) => {
     axios.post(URL, addToCartData, loadConfiguration())
       .then(response => {
         console.log('load', response);
-        dispatch(getUserCart());
+        dispatch(getUserCartThunk());
       })
       .catch(error => console.log('error', error))
       // console.log(product.id);
@@ -53,7 +53,6 @@ const ProductsCard = ({product}) => {
         </article>
         <button onClick={handleCardAddBtn} className='product__card__btn'><ShoppingCartOutlinedIcon /></button>
       </section>
-
     </article>
   )
 }
