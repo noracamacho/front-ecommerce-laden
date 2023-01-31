@@ -28,12 +28,10 @@ const ProductDetails = () => {
         if(allProductsGlobal && product){
             const pivot = allProductsGlobal.filter(prod => prod?.categoryId === product?.categoryId && prod?.title !== product?.title);
             setSimilarProducts(pivot);
-            // console.log('similar', similarProducts);
         }
     }, [allProductsGlobal, product])
 
-    // console.log('product', product);
-    console.log(product?.images);
+    // console.log(product?.images);
 
   return (
     <div className='produc__id__container'>
@@ -41,7 +39,6 @@ const ProductDetails = () => {
             <ProductDescriptionImages productImages={product?.images} />
             <ProductDescription  product={product}/>
         </div>
-        {/* <ProductImageSlider product={product} /> */}
         <div>
             <h5 style={{marginLeft:'4rem', marginBottom:'4rem', fontWeight:'bold'}}>Discover similar items</h5>
             <div className="similar__products__container">
