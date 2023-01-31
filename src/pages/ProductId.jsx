@@ -4,7 +4,9 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductsCard from '../components/Home/ProductCard'
-import ProductDescription from '../components/ProductDescription/ProductDescription'
+import ProductDescription from '../components/ProductDescription/ProductDescription';
+import ProductDescriptionImages from '../components/ProductDescription/ProductDescriptionImages'
+// import ProductImageSlider from '../components/ProductDescription/ProductImageSLider'
 import './styles/productId.css'
 
 const ProductDetails = () => {
@@ -30,11 +32,16 @@ const ProductDetails = () => {
         }
     }, [allProductsGlobal, product])
 
-    // console.log(product);
+    // console.log('product', product);
+    console.log(product?.images);
 
   return (
     <div>
-        <ProductDescription  product={product}/>
+        <div className='product__description__container'>
+            <ProductDescriptionImages productImages={product?.images} />
+            <ProductDescription  product={product}/>
+        </div>
+        {/* <ProductImageSlider product={product} /> */}
         <section>
             <h2>Discover similar items</h2>
             <div className="similar__products__container">

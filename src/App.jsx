@@ -66,6 +66,7 @@ function App() {
         <Route path='/' element={ <Home />}/>
         <Route path='/login' element={ <Login />}/>
         <Route path='/product/:id' element={ <ProductId /> } />
+        {/* Protected Routes */}
         <Route element={<ProtectedRoutes />} >
           <Route path='/purchases' element={ <Purchases />}/>
           <Route path='/cart' element={ <Cart />}/>

@@ -38,7 +38,7 @@ const ProductDescription = ({product}) => {
     }
 
   return (
-    <article>
+    <div className='product__descripton'>
         <h4>{product?.brand}</h4>
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>
@@ -55,7 +55,7 @@ const ProductDescription = ({product}) => {
             </div>
         </section>
         <button onClick={handleAddButton}>Add to cart <ShoppingCartOutlinedIcon /></button>
-    </article>
+    </div>
   )
 }
 
