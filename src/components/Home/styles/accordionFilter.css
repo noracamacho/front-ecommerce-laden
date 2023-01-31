@@ -40,6 +40,12 @@
 }
 .price__filter__input {
     width: 9.9rem;
+    outline: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 .filter__price__btn {
     padding: 0.7rem;
