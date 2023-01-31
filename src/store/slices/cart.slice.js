@@ -12,7 +12,7 @@ const cartSlice = createSlice({
 // esport actions
 export const { setCartGlobal } = cartSlice.actions
 
-// Export main udentifier
+// Export main identifier
 export default cartSlice.reducer
 
 //? Redux Thunk
