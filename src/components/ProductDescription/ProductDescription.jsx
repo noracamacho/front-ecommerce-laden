@@ -38,10 +38,10 @@ const ProductDescription = ({product}) => {
     }
 
   return (
-    <div className='product__descripton__detail__container'>
+    <div className='product__description__detail__container'>
 
     
-    <div className='product__descripton'>
+    <div className='product__description'>
         <h4>{product?.brand}</h4>
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>

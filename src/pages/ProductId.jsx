@@ -42,8 +42,8 @@ const ProductDetails = () => {
             <ProductDescription  product={product}/>
         </div>
         {/* <ProductImageSlider product={product} /> */}
-        <section>
-            <h2>Discover similar items</h2>
+        <div>
+            <h5 style={{marginLeft:'4rem', marginBottom:'4rem', fontWeight:'bold'}}>Discover similar items</h5>
             <div className="similar__products__container">
                 {
                     // similarProducts depende de peticiones asincronicas por lo tanto
@@ -52,7 +52,7 @@ const ProductDetails = () => {
                     ) )
                 }
             </div>
-        </section>
+        </div>
     </div>
   )
 }
