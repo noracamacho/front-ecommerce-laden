@@ -34,17 +34,22 @@ ProductDescriptionImages {
 }
 .carousel, .slide,
 .carousel-dark{
-    width: 700px;
+    width: 500px;
     height: 500px !important;
     object-fit: contain;
 
 }
 .carousel-img,
 .carousel-item {
-    width: 600px;
+    margin-top: 4rem;
+    width: auto I !important;
     height: 500px !important;
     object-fit: contain;
 }
-.carousel-inner {
-    margin-top: 6rem;
+
+.carousel-inner__img{
+    margin-top: 4rem;
+    position: relative;
+    width: 55% !important;
+    overflow: hidden;
 }

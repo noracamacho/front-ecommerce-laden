@@ -5,9 +5,9 @@ const ProductDescriptionImages = ({ productImages }) => {
   console.log(productImages);
 
   return (
-    <Carousel variant="dark"  class="carousel-inner">
+    <Carousel variant="dark"  className="carousel-inner__img">
       {productImages?.map((img) => (
-        <Carousel.Item className="carousel-img">
+        <Carousel.Item key={img.id} className="carousel-img">
             <img
               className="d-block w-100 img-fluid"
               src={img.url}
