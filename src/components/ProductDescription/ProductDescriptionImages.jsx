@@ -3,16 +3,21 @@ import Carousel from "react-bootstrap/Carousel";
 
 const ProductDescriptionImages = ({ productImages }) => {
   console.log(productImages);
+
   return (
-    <div className="carousel__container">
-    <Carousel className="carousel" fade variant="dark">
+    <Carousel variant="dark"  class="carousel-inner">
       {productImages?.map((img) => (
-        <Carousel.Item key={img?.id}>
-          <img className="d-block w-100" src={img?.url} alt="Product image" />
+        <Carousel.Item className="carousel-img">
+            <img
+              className="d-block w-100 img-fluid"
+              src={img.url}
+              alt="First slide"
+            />
         </Carousel.Item>
-      ))}
+            ))
+
+        }
     </Carousel>
-  </div>
   );
 };
 
