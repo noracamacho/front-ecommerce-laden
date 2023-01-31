@@ -3,6 +3,7 @@
 
 const loadConfiguration = () => (
     {
+        // API DE TIPO BEARER
         headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
         }

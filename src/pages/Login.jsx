@@ -11,16 +11,18 @@ const Login = () => {
 
     // Capture forms data & send it
     const submitForm = formData => {
-        // console.log(data);
         const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/login'
         axios.post(URL, formData)
             .then(response => {
                 console.log('login', response);
-                console.log('token', response.data.token);
                 localStorage.setItem('token', response.data.token);
                 navigate('/');
             })
             .catch(err => console.log('errorLogin', err))
+            reset({
+                email:"",
+                password:""
+            })
     }
 
     return (
