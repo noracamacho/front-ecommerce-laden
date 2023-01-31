@@ -38,6 +38,9 @@ const ProductDescription = ({product}) => {
     }
 
   return (
+    <div className='product__descripton__detail__container'>
+
+    
     <div className='product__descripton'>
         <h4>{product?.brand}</h4>
         <h2>{product?.title}</h2>
@@ -48,13 +51,14 @@ const ProductDescription = ({product}) => {
         </section>
         <section>
             <h3>Quantity</h3>
-            <div>
-                <div onClick={handleDecrement}>-</div>
-                <div>{quantity}</div>
-                <div onClick={handleIncrement}>+</div>
+            <div className='quantity__container'>
+                <div className='quantity__icon' onClick={handleDecrement}>-</div>
+                <div className='quantity__number'>{quantity}</div>
+                <div className='quantity__icon'onClick={handleIncrement}>+</div>
             </div>
         </section>
-        <button onClick={handleAddButton}>Add to cart <ShoppingCartOutlinedIcon /></button>
+        <button className='product__description__btn' onClick={handleAddButton}>Add to cart <ShoppingCartOutlinedIcon /></button>
+    </div>
     </div>
   )
 }

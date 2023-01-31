@@ -8,7 +8,7 @@ const ProductDescriptionImages = ({ productImages }) => {
     <Carousel className="carousel" fade variant="dark">
       {productImages?.map((img) => (
         <Carousel.Item key={img?.id}>
-          <img className="d-block w-100" src={img?.url} alt="First image" />
+          <img className="d-block w-100" src={img?.url} alt="Product image" />
         </Carousel.Item>
       ))}
     </Carousel>

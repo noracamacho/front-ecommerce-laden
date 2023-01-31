@@ -36,7 +36,7 @@ const ProductDetails = () => {
     console.log(product?.images);
 
   return (
-    <div>
+    <div className='produc__id__container'>
         <div className='product__description__container'>
             <ProductDescriptionImages productImages={product?.images} />
             <ProductDescription  product={product}/>
