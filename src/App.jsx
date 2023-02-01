@@ -35,7 +35,7 @@ function App() {
     dispatch(getUserCartThunk())
   }, [])
 
-  console.log(isLoading);
+  // console.log(isLoading);
   //! Users
   // useEffect(() => {
   //   const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users';

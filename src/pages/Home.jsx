@@ -5,6 +5,7 @@ import AccordionFilter from '../components/Home/AcordionFilter';
 // import PriceFilter from '../components/Home/PriceFilter';
 import ProductCard from '../components/Home/ProductCard';
 import SearchIcon from '@mui/icons-material/Search';
+import OrderProductsPerPrice from '../components/Home/OrderProductsPerPrice'
 
 import './styles/home.css'
 
@@ -15,7 +16,7 @@ const Home = () => {
     const [filterTo, setFilterTo] = useState(Number.POSITIVE_INFINITY);
     const [inputSearchValue, setInputSearchValue] = useState('');
     const isLoading = useSelector(state => state.isLoading)
-    console.log('isLoadinf', isLoading);
+    // console.log('isLoadinf', isLoading);
 
 
     useEffect(() => {
@@ -41,6 +42,7 @@ const Home = () => {
             <input value={inputSearchValue} onChange={handleChange} className='searchInput' type="text" placeholder='What are you looking for?' />
             <SearchIcon className='search__icon' />
         </div>
+        <OrderProductsPerPrice />
         <AccordionFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo} setInputSearchValue={setInputSearchValue}/>
         <div className='products__container'>
             { 
@@ -50,7 +52,7 @@ const Home = () => {
                         <ProductCard key={product.id} product={product} />
                     ))
                 :   
-                    !isLoading && <h4>There are no products available within that category and price.</h4>
+                    !isLoading && <h5>There are no products available within that category and price.</h5>
 
             }
         </div>
