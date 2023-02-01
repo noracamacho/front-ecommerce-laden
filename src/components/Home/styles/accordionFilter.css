@@ -42,6 +42,7 @@
     width: 9rem;
     outline: none;
     margin-left: .8rem;
+    border: 1px solid #aaa7;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

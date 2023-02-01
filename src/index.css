@@ -40,7 +40,8 @@ a {
     font-size: 1rem;
     width: 31rem;
     height: 3.4rem;
-    border: 2px solid black;
+    /* border: 1px solid black; */
+    border: 1px solid #aaa7;
 
 }
 .searchInput {
