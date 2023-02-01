@@ -42,7 +42,7 @@ const Home = () => {
             <input value={inputSearchValue} onChange={handleChange} className='searchInput' type="text" placeholder='What are you looking for?' />
             <SearchIcon className='search__icon' />
         </div>
-        <OrderProductsPerPrice />
+        {/* <OrderProductsPerPrice /> */}
         <AccordionFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo} setInputSearchValue={setInputSearchValue}/>
         <div className='products__container'>
             { 
