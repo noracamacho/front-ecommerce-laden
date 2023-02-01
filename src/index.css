@@ -13,8 +13,8 @@ img {
     display: block;
 }
 h1, h2, h3, h4, p, ul {
-    margin-top: 0;
-    margin-bottom: 0;
+    text-transform: capitalize !important;
+    letter-spacing: normal !important;
 }
 ul {
     list-style: none;

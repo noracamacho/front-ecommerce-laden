@@ -30,7 +30,6 @@ const ProductDescription = ({product}) => {
         }
         axios.post(URL, data, loadConfiguration())
             .then(response => {
-                // console.log(response)
                 // Execute thunk
                 dispatch(getUserCartThunk())
             })
