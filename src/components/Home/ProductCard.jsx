@@ -25,15 +25,14 @@ const ProductsCard = ({product}) => {
       productId: product.id,
       quantity: 1
     }
-
-    // Uses the bearer token to have authorization to add the product to the cart
+    // Uses bearer token to have authorization to add the product to the cart
     axios.post(URL, addToCartData, loadConfiguration())
       .then(response => {
         console.log('load', response);
+        // Update Cart getting the information from the API
         dispatch(getUserCartThunk());
       })
       .catch(error => console.log('error', error))
-      // console.log(product.id);
   }
 
   return (

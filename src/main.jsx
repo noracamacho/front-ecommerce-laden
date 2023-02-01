@@ -12,6 +12,7 @@ import "bootswatch/dist/lux/bootstrap.min.css";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
+      {/* HashRouter is used when it is a single page app (SPA) */}
       <HashRouter>
         <App />
       </HashRouter>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import AccordionFilter from '../components/Home/AcordionFilter';
-import CategoryFilter from '../components/Home/CategoryFilter';
-import PriceFilter from '../components/Home/PriceFilter';
+// import CategoryFilter from '../components/Home/CategoryFilter';
+// import PriceFilter from '../components/Home/PriceFilter';
 import ProductCard from '../components/Home/ProductCard';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -29,7 +29,7 @@ const Home = () => {
         setSearchedProducts(inputSearch);
         setInputSearchValue(e.target.value)
     }
-    // Firt filters products by price in case the user doesn't enter values, then products that are between 0 to infinity all listed
+    // First filters products by price, in case the user doesn't enter values into price filters, then products that are between 0 to infinity all listed
     const productsFilteredByPrice = searchedProducts?.filter(prod => +prod.price >= filterFrom && +prod.price <= filterTo)
 
   return (
@@ -39,8 +39,6 @@ const Home = () => {
             <SearchIcon className='search__icon' />
         </div>
         <AccordionFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo} setInputSearchValue={setInputSearchValue}/>
-        {/* <PriceFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo}/> */}
-        {/* <CategoryFilter setInputSearchValue={setInputSearchValue} /> */}
         <div className='products__container'>
             { 
                 productsFilteredByPrice && productsFilteredByPrice?.length !== 0 ?
@@ -49,7 +47,7 @@ const Home = () => {
                         <ProductCard key={product.id} product={product} />
                     ))
                 :
-                    <h1>No available products</h1>
+                    <h1>There are no products available within that category and/or price.</h1>
             }
         </div>
     </div>

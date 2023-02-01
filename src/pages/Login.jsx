@@ -9,7 +9,7 @@ const Login = () => {
     // React-hook-form
     const {handleSubmit, register, reset} = useForm();
 
-    // Capture forms data & send it
+    // Capture form's data & send it
     const submitForm = formData => {
         const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/login'
         axios.post(URL, formData)

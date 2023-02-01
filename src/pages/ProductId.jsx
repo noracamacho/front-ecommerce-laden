@@ -31,8 +31,6 @@ const ProductDetails = () => {
         }
     }, [allProductsGlobal, product])
 
-    // console.log(product?.images);
-
   return (
     <div className='produc__id__container'>
         <div className='product__description__container'>
