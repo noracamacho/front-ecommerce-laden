@@ -35,12 +35,19 @@
 .name {
     width: 18rem;
     max-height: fit-content;
+    font-size: 0.9rem;
+}
+.date {
+    font-size: .8rem;
+    color: lightgrey;
+    font-weight: 700;
 }
 .quantity {
+    font-size: .7rem;
     width: 3rem;
     text-align: center;
     padding: 0.5rem 1rem;
-    border: 1px solid grey;
+    border: 1px solid rgb(114, 114, 114);
 }
 .price {
     width: 5rem;
