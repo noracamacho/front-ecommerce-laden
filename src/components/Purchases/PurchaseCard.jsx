@@ -20,7 +20,7 @@ const PurchaseCard = ({purchase}) => {
                         <div className='name'>{purchase?.product.title}</div>
                         <div>{purchaseDate.toLocaleDateString('en-US', options)}</div>
                         <div className='quantity'>{purchase.quantity}</div>
-                        <div>$ {purchase?.product.price * purchase?.quantity}</div>
+                        <div className='price'>$ {purchase?.product.price * purchase?.quantity}</div>
                     </li> 
                 }
 
