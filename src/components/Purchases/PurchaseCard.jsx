@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './styles/purchaseCard.css'
 
 const PurchaseCard = ({purchase}) => {
 
@@ -8,21 +9,22 @@ const PurchaseCard = ({purchase}) => {
     const purchaseDate = new Date(purchase?.createdAt)
     const options = {year: 'numeric', month: 'long', day: 'numeric' };
   return (
-    <div>
-        <h3>{purchaseDate.toLocaleDateString('en-US', options)}</h3>
-        <div>
-            <ul>
+    <div className='purchases__main__container'>
+        {/* <h3>{purchaseDate.toLocaleDateString('en-US', options)}</h3> */}
+            <ul className='purchases__item__container'>
                 {
-                   <li>
+                   <li className='purchase__item'>
+                    <div className='image'>
                         <img src={purchase?.product.images[0].url} alt="product image" style={{height:'4rem', width:'auto'}} />
-                        <h4>{purchase?.product.title}</h4>
-                        <div>{purchase.quantity}</div>
+                    </div>
+                        <div className='name'>{purchase?.product.title}</div>
+                        <div>{purchaseDate.toLocaleDateString('en-US', options)}</div>
+                        <div className='quantity'>{purchase.quantity}</div>
                         <div>$ {purchase?.product.price * purchase?.quantity}</div>
                     </li> 
                 }
 
             </ul>
-        </div>
     </div>
   )
 }

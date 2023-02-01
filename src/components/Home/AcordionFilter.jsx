@@ -68,10 +68,10 @@ function AccordionFilter({setFilterFrom, setFilterTo, setInputSearchValue}) {
         <Accordion.Header>Category</Accordion.Header>
         <Accordion.Body>
         <ul>
-            <li className='categogy__filter__id' onClick={handleAllCategories}>All products</li>
+            <li className='category__filter__id' onClick={handleAllCategories}>All products</li>
             {
                 categories?.map(category => (
-                    <li className='categogy__filter__id' onClick={() => handleCategory(category.id)} key={category.id}>{category.name}</li>
+                    <li className='category__filter__id' onClick={() => handleCategory(category.id)} key={category.id}>{category.name}</li>
                 ))
             }
         </ul>
