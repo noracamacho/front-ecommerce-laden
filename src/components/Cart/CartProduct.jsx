@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import './cartProduct.css';
@@ -23,6 +23,16 @@ const CartProduct = ({product}) => {
       .catch(error => console.log(error))
   }
 
+  const [quantityCart, setQuantityCart] = useState(product?.quantity);
+
+    const handleIncrement = () => {
+        setQuantityCart(quantityCart + 1);
+    }
+    const handleDecrement = () => {
+        if(quantityCart - 1 > 0){
+            setQuantityCart(quantityCart - 1);
+        }
+    }
 
   return (
     <article className='cart__product__card'>
@@ -32,7 +42,13 @@ const CartProduct = ({product}) => {
             <p></p>
         </header>
         <button onClick={handleDelete}><DeleteForeverOutlinedIcon /></button>
-        <div>{product?.quantity}</div>
+        <div className='quantity__container'>
+          <div className='quantity__icon' onClick={handleDecrement}>-</div>
+
+          <div>{quantityCart}</div>
+          <div className='quantity__icon'onClick={handleIncrement}>+</div>
+
+        </div>
         <div>
             <p>Price:</p>
             <span>{product.product?.price}</span>

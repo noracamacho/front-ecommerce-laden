@@ -5,6 +5,7 @@ import CartProduct from '../components/Cart/CartProduct'
 import { getUserCartThunk } from '../store/slices/cart.slice'
 import loadConfiguration from '../utils/loadConfiguration'
 
+
 const Cart = () => {
 
     const dispatch = useDispatch();

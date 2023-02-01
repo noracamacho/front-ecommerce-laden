@@ -1,21 +1,26 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
+import  loadConfiguration from '../utils/loadConfiguration'
 
 const Login = () => {
 
+    const [isLogged, setIsLogged] = useState(false);
+    const [userData, setUserData] = useState();
     const navigate = useNavigate()
     // React-hook-form
     const {handleSubmit, register, reset} = useForm();
 
     // Capture form's data & send it
-    const submitForm = formData => {
+    const submitForm = (formData) => {
         const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/login'
         axios.post(URL, formData)
             .then(response => {
+                // setUserData(response);
                 console.log('login', response);
                 localStorage.setItem('token', response.data.token);
+                setIsLogged(true)
                 navigate('/');
             })
             .catch(err => console.log('errorLogin', err))
@@ -24,23 +29,66 @@ const Login = () => {
                 password:""
             })
     }
+    // Users information
+    useEffect(() => {
+        const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/me';
+          axios.get(URL, loadConfiguration())
+            .then(response => {
+            //   console.log(response?.data)
+              setUserData(response?.data);
+            })
+            .catch(error => console.log('error', error))
+      },[])
+
+    //   console.log(userData);
+
+    useEffect(() => {
+        const condition = localStorage.getItem('token') ? true : false;
+        setIsLogged(condition);
+    }, [])
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        setIsLogged(false);
+    }
+    // if(isLogged) {
+    //     return (
+    //         <div>
+    //             <button onClick={handleLogout}>Logout</button>
+    //         </div>
+    //     )
+
+    // }
+    
 
     return (
-        <div>
-            {/* On registered handleSubmit should be executed */}
-        <form onSubmit={handleSubmit(submitForm)}>
-            <div>
-                <label htmlFor="email">Email</label>
-                <input type="text" id="email" {...register("email")} /> 
-            </div>
-            <div>
-                <label htmlFor="password">Password</label>
-                {/* React-hook-form  register*/}
-                <input type="password" id="password" {...register("password")} />
-            </div>
-            <button>Login</button>
-        </form>
-    </div>
+            isLogged ? 
+            (
+                <div style={{height:'10rem'}}>
+                    <h4>{userData?.firstName} {userData?.lastName}</h4>
+                    <button onClick={handleLogout}>Logout</button>
+                </div>
+            )
+            :
+            (
+
+                <div>
+                    {/* On registered handleSubmit should be executed */}
+                    <form onSubmit={handleSubmit(submitForm)}>
+                        <div>
+                            <label htmlFor="email">Email</label>
+                            <input type="text" id="email" {...register("email")} /> 
+                        </div>
+                        <div>
+                            <label htmlFor="password">Password</label>
+                            {/* React-hook-form  register*/}
+                            <input type="password" id="password" {...register("password")} />
+                        </div>
+                        <button>Login</button>
+                    </form>
+                </div>
+            )
+        
   )
 }
 

@@ -16,9 +16,14 @@ import Cart from './pages/Cart'
 import AppNavBar from './components/shared/AppNavBar'
 import Purchases from './pages/Purchases'
 import ProtectedRoutes from './components/ProtectedRoutes';
+import LoadingScreen from './components/loadingScreen/LoadingScreen';
+// import Footer from './components/Footer/Footer'
+import { useSelector } from 'react-redux'
+import { Container } from 'react-bootstrap'
 
 function App() {
 
+  const isLoading = useSelector(state => state.isLoading)
   //! Despacha las acciones y los thinks
   const dispatch = useDispatch();
 
@@ -30,6 +35,7 @@ function App() {
     dispatch(getUserCartThunk())
   }, [])
 
+  console.log(isLoading);
   //! Users
   // useEffect(() => {
   //   const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users';
@@ -61,6 +67,9 @@ function App() {
       <AppNavBar />
       {/* <AppNavBar2 /> */}
       {/* <SearchInput /> */}
+      { isLoading && <LoadingScreen />}
+
+      <Container >
       <Routes>
         <Route path='/' element={ <Home />}/>
         <Route path='/login' element={ <Login />}/>
@@ -72,6 +81,7 @@ function App() {
           <Route path='/cart' element={ <Cart />}/>
         </Route>
       </Routes>
+      </Container>
     </div>
   )
 }

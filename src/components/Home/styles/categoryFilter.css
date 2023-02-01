@@ -1,4 +1,4 @@
 .categogy__filter__id{
-    cursor: pointer;
-    margin-bottom: 1rem;
+    cursor: pointer !important;
+    margin-bottom: 1rem !important;
 }

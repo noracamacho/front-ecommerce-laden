@@ -14,6 +14,9 @@ const Home = () => {
     const [filterFrom, setFilterFrom] = useState(0)
     const [filterTo, setFilterTo] = useState(Number.POSITIVE_INFINITY);
     const [inputSearchValue, setInputSearchValue] = useState('');
+    const isLoading = useSelector(state => state.isLoading)
+    console.log('isLoadinf', isLoading);
+
 
     useEffect(() => {
         if(products) {
@@ -29,7 +32,7 @@ const Home = () => {
         setSearchedProducts(inputSearch);
         setInputSearchValue(e.target.value)
     }
-    // First filters products by price, in case the user doesn't enter values into price filters, then products that are between 0 to infinity all listed
+    // First filters products by price, in case the user doesn't enter values into price, then products that are between 0 to infinity all listed
     const productsFilteredByPrice = searchedProducts?.filter(prod => +prod.price >= filterFrom && +prod.price <= filterTo)
 
   return (
@@ -46,8 +49,9 @@ const Home = () => {
                     productsFilteredByPrice?.map(product => (
                         <ProductCard key={product.id} product={product} />
                     ))
-                :
-                    <h1>There are no products available within that category and/or price.</h1>
+                :   
+                    !isLoading && <h4>There are no products available within that category and price.</h4>
+
             }
         </div>
     </div>

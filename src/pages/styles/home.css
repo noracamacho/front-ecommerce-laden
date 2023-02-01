@@ -1,16 +1,24 @@
 
+.home {
+    width: 100%;
+    height: fit-content;
+}
+conatiner__prd {
+    display: flex;
+}
 .products__container {
     position: absolute;
-    top: 15rem;
-    right: 0;
+    top: 19rem;
+    right: 1rem;
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
+    width: 70%;
     height: fit-content;
-    padding-bottom: 3rem;
-    margin: 2rem auto 5rem auto;
+    padding-bottom: 15rem;
+    margin-left: 2rem;
+    /* margin: 2rem auto 5rem auto; */
     float: right;
     z-index: 2;
 }

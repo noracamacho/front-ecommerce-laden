@@ -5,7 +5,7 @@
 .accordion__filter {
     position: relative;
     max-width: 15rem !important;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     top: 10rem;
 }
 .accordion-header {
@@ -39,8 +39,9 @@
     margin-bottom: 5rem;
 }
 .price__filter__input {
-    width: 9.9rem;
+    width: 9rem;
     outline: none;
+    margin-left: .8rem;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

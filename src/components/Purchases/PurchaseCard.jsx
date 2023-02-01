@@ -1,6 +1,9 @@
 import React from 'react'
 
 const PurchaseCard = ({purchase}) => {
+
+
+    
     console.log(purchase);
     const purchaseDate = new Date(purchase?.createdAt)
     const options = {year: 'numeric', month: 'long', day: 'numeric' };
