@@ -1,0 +1,48 @@
+.logout__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.logout__card {
+    position: relative;
+    top: 10rem;
+    width: 25rem;
+    height: 16rem;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.img__container {
+    position: relative;
+    background-color: black;
+    padding-top: 1.5rem;
+    height: 10rem;
+    width: 100%;
+    top: 0;
+    /* border-radius: 10px; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.logout__card img {
+    width: 7rem;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.logout__card h4 {
+    margin-top: 1rem;
+}
+
+
+.logout__card button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border: none !important;
+    /* position: relative; */
+    bottom: 2rem;
+    margin: 0 auto;
+}

@@ -3,11 +3,13 @@ import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
 import  loadConfiguration from '../utils/loadConfiguration'
+import './styles/login.css'
 
 const Login = () => {
 
     const [isLogged, setIsLogged] = useState(false);
     const [userData, setUserData] = useState();
+    const [userPic, setUserPic] = useState('')
     const navigate = useNavigate()
     // React-hook-form
     const {handleSubmit, register, reset} = useForm();
@@ -40,6 +42,16 @@ const Login = () => {
             .catch(error => console.log('error', error))
       },[])
 
+      useEffect(() => {
+        const URL = `https://randomuser.me/api/`;
+        axios.get(URL)
+        .then(response => {
+            // console.log(response.data.results[0].picture.medium)
+            setUserPic(response.data.results[0]);
+        })
+        .catch(error => console.log('error', error))
+      }, [])
+
     //   console.log(userData);
 
     useEffect(() => {
@@ -51,22 +63,19 @@ const Login = () => {
         localStorage.removeItem('token');
         setIsLogged(false);
     }
-    // if(isLogged) {
-    //     return (
-    //         <div>
-    //             <button onClick={handleLogout}>Logout</button>
-    //         </div>
-    //     )
-
-    // }
-    
 
     return (
             isLogged ? 
             (
-                <div style={{height:'10rem'}}>
-                    <h4>{userData?.firstName} {userData?.lastName}</h4>
-                    <button onClick={handleLogout}>Logout</button>
+                <div className='logout__container' style={{height:'10rem'}}>
+                    <div className='logout__card'>
+                        <div className='img__container'>
+                            <img src={userPic?.picture?.medium} alt="" />
+                        </div>
+                        <h4>{userData?.firstName} {userData?.lastName}</h4>
+                        <button onClick={handleLogout}>Logout</button>
+
+                    </div>
                 </div>
             )
             :
