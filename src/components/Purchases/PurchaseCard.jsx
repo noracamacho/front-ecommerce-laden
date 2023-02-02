@@ -5,9 +5,8 @@ import './styles/purchaseCard.css'
 const PurchaseCard = ({purchase}) => {
 
     const navigate = useNavigate();   
-    // console.log('purchase', purchase);
     const purchaseDate = new Date(purchase?.createdAt)
-    const options = {year: 'numeric', month: 'long', day: 'numeric' };
+    // const options = {year: 'numeric', month: 'long', day: 'numeric' };
 
     const handleClick = () => {
         navigate(`/product/${purchase.product.id}`);
