@@ -22,6 +22,7 @@ const CartProduct = ({product}) => {
       })
       .catch(error => console.log(error))
   }
+  console.log(product)
 
   const [quantityCart, setQuantityCart] = useState(product?.quantity);
 
@@ -36,22 +37,24 @@ const CartProduct = ({product}) => {
 
   return (
     <article className='cart__product__card'>
-        <header>
-            <h4>{product.product?.brand}</h4>
-            <h3>{product.product?.title}</h3>
-            <p></p>
-        </header>
-        <button onClick={handleDelete}><DeleteForeverOutlinedIcon /></button>
-        <div className='quantity__container'>
-          <div className='quantity__icon' onClick={handleDecrement}>-</div>
-
-          <div>{quantityCart}</div>
-          <div className='quantity__icon'onClick={handleIncrement}>+</div>
-
+        <div className='cart__img__container'>
+          <img  className='cart__img' src={product.product.images[2].url} alt="" />
         </div>
-        <div>
-            <p>Price:</p>
-            <span>{product.product?.price}</span>
+        
+          <div className='cart__quantity'>
+            <h3 className='cart__quantity__title'>{product.product?.title}</h3>
+            <div className='quantity__container'>
+              <div className='quantity__icon' onClick={handleDecrement}>-</div>
+              <div className='quantity'>{quantityCart}</div>
+              <div className='quantity__icon'onClick={handleIncrement}>+</div>
+            </div>
+          </div>
+            {/* <h4>{product.product?.brand}</h4> */}
+         <button className='cart__product__buton' onClick={handleDelete}><DeleteForeverOutlinedIcon /></button>
+        
+        <div className='cart__total_per__product'>
+            <div>Price:</div>
+            <div className='total__price'>$ {product.product?.price} </div>
         </div>
     </article>
   )

@@ -10,6 +10,7 @@ import './styles/appNavBar.css'
 const AppNavBar = () => {
 
     const [isLogged, setIsLogged] = useState(false);
+    
     useEffect(() => {
         const condition = localStorage.getItem('token') ? true : false;
         setIsLogged(condition);

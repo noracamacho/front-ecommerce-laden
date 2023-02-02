@@ -1,7 +1,35 @@
 .chechout__btn {
-    position: fixed;
-    top: 30rem;
-    left: 5rem;
-    background-color: red;
-    z-index: 1000;
+    /* position: fixed; */
+    /* top: 30rem;
+    left: 5rem; */
+    background-color: black;
+    color: white;
+    height: 3rem;
+    border-radius: 4px;
+    z-index: 1;
+    margin: 20px;
+}
+.cart__main__container {
+    position: relative;
+    top: 10rem;
+    width: 80%;
+    margin: 0 auto;
+}
+/* .cart__container {
+    position: absolute;
+    top: 20rem;
+} */
+.cart__total__container {
+    display: flex;
+    flex-direction: column;
+}
+.cart__total__amount {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: right;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-right: 1.5rem;
+    z-index: 1;
 }
