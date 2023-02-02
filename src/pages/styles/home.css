@@ -3,12 +3,24 @@
     width: 100%;
     height: fit-content;
 }
-conatiner__prd {
+.conatiner__prd {
     display: flex;
 }
+.products__body__container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    top: 18rem;
+    width: 90%;
+    justify-content: space-between;
+    /* height: fit-content; */
+    /* background-color: red;
+    border: 5px solid red; */
+}
 .products__container {
-    position: absolute;
-    top: 16rem;
+    /* position: absolute; */
+    top: 18rem;
     right: 1rem;
     display: flex;
     gap: 50px;
@@ -16,7 +28,7 @@ conatiner__prd {
     justify-content: center;
     width: 70%;
     height: fit-content;
-    padding-bottom: 15rem;
+    /* padding-bottom: 15rem; */
     margin-left: 2rem;
     /* margin: 2rem auto 5rem auto; */
     float: right;

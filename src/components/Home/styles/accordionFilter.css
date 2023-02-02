@@ -4,11 +4,11 @@
 
 .accordion__filter {
     /* position: relative; */
-    position: absolute;
-    /* max-width: 15rem !important; */
-    width: 13.5rem;
-    left: 5rem;
-    top: 16rem;
+    /* position: absolute; */
+    max-width: fit-content;
+    /* width: 13.5rem; */
+    /* left: 5rem; */
+    /* top: 18rem; */
 }
 .accordion-header {
     border-bottom: 2px solid lightgrey;

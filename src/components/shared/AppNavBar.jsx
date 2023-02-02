@@ -16,7 +16,7 @@ const AppNavBar = () => {
     }, [])
 
   return (
-    <Navbar bg="primary" expand="lg" variant='dark'>
+    <Navbar className='nav__bar' bg="primary" expand="lg" variant='dark'>
       <Container>
         <Navbar.Brand as={Link} to="/"><img className='logo' src={logo} alt="" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

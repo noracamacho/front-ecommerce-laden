@@ -9,7 +9,7 @@ import ProductId from './pages/ProductId'
 import Home from './pages/Home';
 import Login from './pages/Login'
 import './App.css'
-import { getUserCartThunk } from './store/slices/cart.slice'
+// import { getUserCartThunk } from './store/slices/cart.slice'
 // import AppNavBar2 from './components/shared/AppNavBar2'
 import Cart from './pages/Cart'
 // import SearchInput from './components/shared/SearchInput'
@@ -33,7 +33,7 @@ function App() {
   // ? The Thunks should also use dispatch
   useEffect(() => {
     dispatch(getAllProductsThunk())
-    dispatch(getUserCartThunk())
+    // dispatch(getUserCartThunk())
   }, [])
 
   // console.log(isLoading);
@@ -69,7 +69,7 @@ function App() {
         <div>
           { isLoading && <LoadingScreen />}
 
-          <Container className='my-5' >
+          {/* <Container className='my-5' > */}
           <Routes>
             <Route path='/' element={ <Home />}/>
             <Route path='/login' element={ <Login />}/>
@@ -81,10 +81,10 @@ function App() {
               <Route path='/cart' element={ <Cart />}/>
             </Route>
           </Routes>
-          </Container>
+          {/* </Container> */}
 
         </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

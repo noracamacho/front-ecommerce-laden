@@ -1,14 +1,15 @@
 .sort__buttons__container {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content:right;
     align-items: center;
-    top: 3rem;
-    right: 0;
-    /* background-color: red; */
-    display: flex;
-    float: right;
+    top: 11rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    width: 80%;
+    height: 3.4rem;
     gap: 1rem;
+    z-index: 1;
 }
 .sort__buttons__container button {
     font-size: 1rem;

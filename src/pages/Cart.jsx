@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CartProduct from '../components/Cart/CartProduct'
 import { getUserCartThunk } from '../store/slices/cart.slice'
@@ -9,8 +9,14 @@ import loadConfiguration from '../utils/loadConfiguration'
 const Cart = () => {
 
     const dispatch = useDispatch();
+
     // Callback - the global state that needs to be accessed (state.cart)
     const userCartProducts = useSelector(state => state.cart)
+
+    // Call thunk
+    useEffect(() => {
+    dispatch(getUserCartThunk())
+    }, []);
 
     const getTotalPrice = () => {
        let totalPrice = userCartProducts?.reduce((acc, product) => {

@@ -71,10 +71,10 @@ const Login = () => {
     return (
             isLogged ? 
             (
-                <div className='logout__container' style={{height:'10rem'}}>
+                <div className='logout__container'>
                     <div className='logout__card'>
                         <div className='img__container'>
-                            <img src={userPic?.picture?.medium} alt="" />
+                            <img src={userPic?.picture?.large} alt="" />
                         </div>
                         <h4>{userData?.firstName} {userData?.lastName}</h4>
                         <button onClick={handleLogout}>Logout</button>

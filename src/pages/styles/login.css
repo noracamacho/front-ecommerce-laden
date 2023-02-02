@@ -1,14 +1,17 @@
 .logout__container,
 .login__container {
     position: relative;
+    top: 17rem;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* background-color: red; */
 }
 .login__card {
     position: relative;
-    /* top: 8rem; */
+    /* top: 12rem; */
     width: 25rem;
     height: 28rem;
     color: black;
@@ -57,33 +60,36 @@
 }
 .logout__card {
     position: relative;
-    top: 10rem;
-    width: 25rem;
-    height: 16rem;
+    /* top: 17rem; */
+    width: 30rem;
+    height: 23rem;
     color: black;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 5px solid black;
+    border-inline: 5px solid black;
 }
 .img__container {
     position: relative;
     background-color: black;
     padding-top: 1.5rem;
-    height: 10rem;
+    height: 13rem;
     width: 100%;
     top: 0;
-    /* border-radius: 10px; */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 2rem;
 
 }
 .logout__card img {
-    width: 7rem;
+    width: 10rem;
     height: auto;
     border-radius: 50%;
     margin: 0 auto;
+    border: 3px solid white;
 }
 .logout__card h4 {
-    margin-top: 1rem;
+    margin: 2rem 0;
+    font-size: 1.8rem !important;
 }
 
 
@@ -95,4 +101,13 @@
     /* position: relative; */
     bottom: 2rem;
     margin: 0 auto;
+    font-size: 1.2rem;
+    padding: .3rem 1rem;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.logout__card button:hover {
+    filter: brightness(1.5);
+    background-color: rgb(47, 46, 46);
+
 }
