@@ -19,8 +19,8 @@ const SortProductsPerPrice = () => {
   return (
     <div className='sort__buttons__container'>
         <div>Sort by price:</div>
-        <button onClick={handleAscendingSort}>Ascending</button>
-        <button onClick={handleDescendingSort}>Descending Order</button>
+        <button onClick={handleAscendingSort}>Low To High</button>
+        <button onClick={handleDescendingSort}>High To Low</button>
     </div>
   )
 }
