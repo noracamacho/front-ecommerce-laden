@@ -3,10 +3,12 @@
 }
 
 .accordion__filter {
-    position: relative;
-    max-width: 15rem !important;
-    /* margin-left: 2rem; */
-    top: 10rem;
+    /* position: relative; */
+    position: absolute;
+    /* max-width: 15rem !important; */
+    width: 13rem;
+    left: 3rem;
+    top: 16rem;
 }
 .accordion-header {
     border-bottom: 2px solid lightgrey;
@@ -39,7 +41,7 @@
     margin-bottom: 5rem;
 }
 .price__filter__input {
-    width: 9rem;
+    width: 6rem;
     outline: none;
     margin-left: .8rem;
     border: 1px solid #aaa7;
@@ -50,6 +52,7 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 .filter__price__btn {
+    font-size: 1rem;
     padding: 0.5rem 0.7rem;
     border-radius: 10px;
     color: white;

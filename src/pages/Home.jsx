@@ -6,8 +6,8 @@ import AccordionFilter from '../components/Home/AcordionFilter';
 import ProductCard from '../components/Home/ProductCard';
 import SearchIcon from '@mui/icons-material/Search';
 import OrderProductsPerPrice from '../components/Home/OrderProductsPerPrice'
-
 import './styles/home.css'
+import { Col, Row } from 'react-bootstrap';
 
 const Home = () => {
     const products = useSelector(state => state.products);
@@ -39,23 +39,33 @@ const Home = () => {
   return (
     <div className='home'>
         <div className='search__section'>
+            <div className='search__input__container'>
             <input value={inputSearchValue} onChange={handleChange} className='searchInput' type="text" placeholder='What are you looking for?' />
             <SearchIcon className='search__icon' />
+            </div>
         </div>
-        {/* <OrderProductsPerPrice /> */}
-        <AccordionFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo} setInputSearchValue={setInputSearchValue}/>
-        <div className='products__container'>
-            { 
-                productsFilteredByPrice && productsFilteredByPrice?.length !== 0 ?
-                // Renders all the products after they are filtered by price
-                    productsFilteredByPrice?.map(product => (
-                        <ProductCard key={product.id} product={product} />
-                    ))
-                :   
-                    !isLoading && <h5>There are no products available within that category and price.</h5>
+        <Row>
+            <Col lg={3}>
+                {/* <OrderProductsPerPrice /> */}
+                <AccordionFilter setFilterFrom={setFilterFrom} setFilterTo={setFilterTo} setInputSearchValue={setInputSearchValue}/>
+            </Col>
+            <Col lg={12}>
+                <div className='products__container'>
+                { 
+                    productsFilteredByPrice && productsFilteredByPrice?.length !== 0 ?
+                    // Renders all the products after they are filtered by price
+                        productsFilteredByPrice?.map(product => (
+                            <ProductCard key={product.id} product={product} />
+                        ))
+                    :   
+                        !isLoading && <h5>There are no products available within that category and price.</h5>
 
-            }
-        </div>
+                }
+                </div>
+            </Col>
+        </Row>
+        
+        
     </div>
   )
 }

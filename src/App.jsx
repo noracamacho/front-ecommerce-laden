@@ -69,7 +69,7 @@ function App() {
       {/* <SearchInput /> */}
       { isLoading && <LoadingScreen />}
 
-      <Container >
+      <Container className='my-5' >
       <Routes>
         <Route path='/' element={ <Home />}/>
         <Route path='/login' element={ <Login />}/>
