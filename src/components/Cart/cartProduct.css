@@ -1,12 +1,12 @@
 .cart__product__card {
+    background-color:whitesmoke;
     padding: 3px;
-    /* margin-bottom: 20px; */
     margin: 20px;
-    border: 1px solid grey;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem 0.5rem;
 }
 .cart__img__container {
     width: 5rem;
@@ -31,8 +31,9 @@
     text-align: center;
 }
 .cart__product__buton {
-    background-color: white;
+    background-color:whitesmoke;
     color: red;
+    cursor: pointer;
 }
 .cart__total_per__product {
     display: flex;
@@ -43,6 +44,6 @@
     /* width: 6rem; */
 }
 .total__price{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
 }
