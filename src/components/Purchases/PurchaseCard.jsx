@@ -23,7 +23,7 @@ const PurchaseCard = ({purchase}) => {
                         <img src={purchase?.product.images[2].url} alt="product image" style={{height:'4rem', width:'auto'}} />
                     </div>
                         <div className='name'>{purchase?.product.title}</div>
-                        <div className='date'>{purchaseDate.toLocaleDateString('en-US', options)}</div>
+                        <div className='date'>{purchaseDate.toLocaleDateString()}</div>
                         <div className='quantity'>{purchase.quantity}</div>
                         <div className='price'>$ {purchase?.product.price * purchase?.quantity}</div>
                     </li> 
