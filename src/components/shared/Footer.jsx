@@ -15,7 +15,7 @@ const Footer = () => {
                 </a>
             </div>
             <div className="copyright">
-                Created by Nora Camacho for © Academlo 2023
+                Built by Nora Camacho for © Academlo 2023
             </div>
         </footer>
     );
