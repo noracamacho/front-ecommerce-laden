@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import PurchaseCard from '../components/Purchases/PurchaseCard';
 import loadConfiguration from '../utils/loadConfiguration';
+import './styles/purchases.css'
 
 const Purchases = () => {
 
@@ -22,7 +23,7 @@ const Purchases = () => {
 
 
   return (
-    <div>
+    <div className='main__container'>
       <h2>Purchases</h2>
       <div className='purchases__container'>
         {
