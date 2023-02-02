@@ -9,9 +9,13 @@ export const productsSlice = createSlice({
         setProductsGlobal: (state, action) => action.payload,
         ascendingPriceProducts: state => {
             state.sort((a, b) =>  +a.price - +b.price)
+        },
+        descendingPriceProducts: state => {
+            state.sort((a, b) =>  +b.price - +a.price)
         }
     }
 })
+
 
 //? Thunk get all products
 export const getAllProductsThunk = () => (dispatch) => {
@@ -31,6 +35,6 @@ export const getProductsByCategoryIdThunk = (id) => (dispatch) => {
     .finally(() => dispatch(setIsLoading(false)));
 }
 
-export const { setProductsGlobal, ascendingPriceProducts } = productsSlice.actions;
+export const { setProductsGlobal, ascendingPriceProducts, descendingPriceProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

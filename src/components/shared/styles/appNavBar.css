@@ -7,3 +7,10 @@
 .navbar {
     z-index: 10;
 }
+.logo{
+    /* position: absolute; */
+    /* margin-top: .4rem; */
+    height: 3.5rem;
+    margin-left: 0.5rem;
+    width: fit-content;
+}

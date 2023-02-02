@@ -5,9 +5,10 @@ import AccordionFilter from '../components/Home/AcordionFilter';
 // import PriceFilter from '../components/Home/PriceFilter';
 import ProductCard from '../components/Home/ProductCard';
 import SearchIcon from '@mui/icons-material/Search';
-import OrderProductsPerPrice from '../components/Home/OrderProductsPerPrice'
+// import OrderProductsPerPrice from '../components/Home/OrderProductsPerPrice'
 import './styles/home.css'
 import { Col, Row } from 'react-bootstrap';
+import SortProductsPerPrice from '../components/Home/SortProductsPerPrice';
 
 const Home = () => {
     const products = useSelector(state => state.products);
@@ -38,6 +39,7 @@ const Home = () => {
 
   return (
     <div className='home'>
+        <SortProductsPerPrice />
         <div className='search__section'>
             <div className='search__input__container'>
             <input value={inputSearchValue} onChange={handleChange} className='searchInput' type="text" placeholder='What are you looking for?' />

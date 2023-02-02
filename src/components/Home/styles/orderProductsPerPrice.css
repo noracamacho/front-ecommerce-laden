@@ -1,9 +1,0 @@
-.sort__buttons__container {
-    position: relative;
-    top: 7rem;
-    right: 0;
-    /* background-color: red; */
-    display: flex;
-    float: right;
-    gap: 1rem;
-}

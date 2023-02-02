@@ -1,0 +1,19 @@
+.sort__buttons__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 3rem;
+    right: 0;
+    /* background-color: red; */
+    display: flex;
+    float: right;
+    gap: 1rem;
+}
+.sort__buttons__container button {
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 10px;
+    color: white;
+    background-color: black;
+}
