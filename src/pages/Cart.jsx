@@ -51,7 +51,7 @@ const Cart = () => {
             <p>
                 { userCartProducts ? getTotalPrice() : 0 }
             </p>
-            <button onClick={handleCheckout}>Checkout</button>
+            <button className='chechout__btn' onClick={handleCheckout}>Checkout</button>
         </footer>
     </section>
   )

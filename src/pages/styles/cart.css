@@ -1,0 +1,7 @@
+.chechout__btn {
+    position: fixed;
+    top: 30rem;
+    left: 5rem;
+    background-color: red;
+    z-index: 1000;
+}

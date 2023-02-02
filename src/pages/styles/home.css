@@ -22,8 +22,13 @@ conatiner__prd {
     float: right;
     z-index: 2;
 }
-
 /* .search__icon {
     position: relative;
     top: 10rem;
 } */
+.filter__criteria__message {
+    font-size: 2rem;
+    position: absolute;
+    top: 10rem;
+    text-align: center;
+}
