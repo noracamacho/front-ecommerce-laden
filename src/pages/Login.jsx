@@ -1,9 +1,11 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
+import React, { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import  loadConfiguration from '../utils/loadConfiguration'
-import './styles/login.css'
+import  loadConfiguration from '../utils/loadConfiguration';
+import EmailIcon from '@mui/icons-material/Email';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import './styles/login.css';
 
 const Login = () => {
 
@@ -81,20 +83,34 @@ const Login = () => {
             :
             (
 
-                <div>
-                    {/* On registered handleSubmit should be executed */}
-                    <form onSubmit={handleSubmit(submitForm)}>
-                        <div>
-                            <label htmlFor="email">Email</label>
-                            <input type="text" id="email" {...register("email")} /> 
-                        </div>
-                        <div>
-                            <label htmlFor="password">Password</label>
-                            {/* React-hook-form  register*/}
-                            <input type="password" id="password" {...register("password")} />
-                        </div>
-                        <button>Login</button>
-                    </form>
+                <div className='login__container'>
+                    <div className='login__card'>
+                        {/* On registered handleSubmit should be executed */}
+                        <form onSubmit={handleSubmit(submitForm)}>
+                            <div>Welcome! Enter your email and password!</div>
+                            <div className='login__test__data'>
+                                <h5>Test data</h5>
+                                <div className='test__data'>
+                                    <EmailIcon className='icon'/>
+                                    <p>nelisa@gmail.com</p>
+                                </div>
+                                <div className='test__data'>
+                                    <LockOpenIcon className='icon'/>
+                                    <p>lobo123</p>
+                                </div>
+                            </div>
+                            <div className='login__inputs'>
+                                <label htmlFor="email">Email</label>
+                                <input type="text" id="email" {...register("email")} /> 
+                            </div>
+                            <div className='login__inputs'>
+                                <label htmlFor="password">Password</label>
+                                {/* React-hook-form  register*/}
+                                <input type="password" id="password" {...register("password")} />
+                            </div>
+                            <button className='login__btn'>Login</button>
+                        </form>
+                    </div>
                 </div>
             )
         

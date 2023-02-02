@@ -1,9 +1,55 @@
-.logout__container {
+.logout__container,
+.login__container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+.login__card {
+    position: relative;
+    /* top: 8rem; */
+    width: 25rem;
+    height: 28rem;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+
+}
+.login__test__data {
+    background-color: rgb(80, 79, 79);
+    border-radius: 10px;
+    padding: .6rem;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+}
+.login__test__data h5 {
+    color: white !important;
+}
+.test__data {
+    display: flex;
+    gap: .5rem;
+}
+.test__data p,
+.icon { 
+    text-transform: lowercase !important;
+    color: white !important;
+}
+.login__inputs {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.login__btn {
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-radius: 4px;
+    height: 2rem;
+    margin-top: .5rem;
 }
 .logout__card {
     position: relative;
