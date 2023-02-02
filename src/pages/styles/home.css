@@ -14,13 +14,14 @@
     top: 18rem;
     width: 90%;
     justify-content: space-between;
+    margin-bottom: 4rem;
     /* height: fit-content; */
     /* background-color: red;
     border: 5px solid red; */
 }
 .products__container {
     /* position: absolute; */
-    top: 18rem;
+    top: 16rem;
     right: 1rem;
     display: flex;
     gap: 50px;
@@ -33,6 +34,7 @@
     /* margin: 2rem auto 5rem auto; */
     float: right;
     z-index: 2;
+    padding-bottom: 3rem;
 }
 /* .search__icon {
     position: relative;
