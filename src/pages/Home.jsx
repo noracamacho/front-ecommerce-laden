@@ -58,7 +58,7 @@ const Home = () => {
                             <ProductCard key={product.id} product={product} />
                         ))
                     :   
-                        !isLoading && <h5>There are no products available within that category and price.</h5>
+                        !isLoading && <h5>There are no products available within this search criteria.</h5>
 
                 }
                 </div>
