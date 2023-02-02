@@ -26,6 +26,7 @@ const Login = () => {
                 localStorage.setItem('token', response.data.token);
                 setIsLogged(true)
                 navigate('/');
+                window.location.reload();
             })
             .catch(err => console.log('errorLogin', err))
             reset({
@@ -64,6 +65,7 @@ const Login = () => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         setIsLogged(false);
+        window.location.reload();
     }
 
     return (
