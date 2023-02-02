@@ -24,7 +24,7 @@ const Purchases = () => {
 
   return (
     <div className='main__container'>
-      <h2>Purchases</h2>
+      <h2>My Purchases</h2>
       <div className='purchases__container'>
         {
           usersPurchases?.map(purchase => (

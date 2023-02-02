@@ -76,27 +76,11 @@ a {
     right: 0;
 }
 
-.quantity__container {
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    justify-content: space-evenly;
-    font-size: 1.5rem;
-    margin: .5rem 0;
-    border: 2px solid lightgrey;
-}
-.quantity__icon {
-    width: 2.5rem;
-    text-align: center;
-    cursor: pointer;
-    border: 2px solid lightgrey;
 
-}
-.quantity__number {
-    width: 4rem;
-    text-align: center;
-    border: 2px solid lightgrey;
-}
 .nav-link {
     color: white !important;
+}
+.my-5 {
+    min-height: calc(200vh - 120px) !important;
+    /* 80px header + 40px footer = 120px  */
 }

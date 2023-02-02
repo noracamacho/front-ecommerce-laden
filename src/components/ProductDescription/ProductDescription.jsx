@@ -4,6 +4,7 @@ import loadConfiguration from "../../utils/loadConfiguration";
 import axios from 'axios';
 import { getUserCartThunk } from '../../store/slices/cart.slice';
 import { useDispatch } from 'react-redux';
+import './productDescription.css';
 
 // ? Como la info viene de una petición asincronica se debe usar el encadenamieto opcional
 const ProductDescription = ({product}) => {
@@ -44,18 +45,20 @@ const ProductDescription = ({product}) => {
         <h4>{product?.brand}</h4>
         <h2>{product?.title}</h2>
         <p>{product?.description}</p>
-        <section>
-            <span>Price</span>
-            <h3>$ {product?.price}</h3>
-        </section>
-        <section>
-            <h3>Quantity</h3>
-            <div className='quantity__container'>
-                <div className='quantity__icon' onClick={handleDecrement}>-</div>
-                <div className='quantity__number'>{quantity}</div>
-                <div className='quantity__icon'onClick={handleIncrement}>+</div>
+        <div className='price__quantity__section'>
+            <div>
+                <h5>Price</h5>
+                <h3>$ {product?.price}</h3>
             </div>
-        </section>
+            <div>
+                <h5>Quantity</h5>
+                <div className='quantity__container'>
+                    <div className='quantity__icon' onClick={handleDecrement}>-</div>
+                    <div className='quantity__number'>{quantity}</div>
+                    <div className='quantity__icon'onClick={handleIncrement}>+</div>
+                </div>
+            </div>
+        </div>
         <button className='product__description__btn' onClick={handleAddButton}>Add to cart <ShoppingCartOutlinedIcon /></button>
     </div>
     </div>

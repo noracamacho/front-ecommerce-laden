@@ -1,14 +1,11 @@
-import React from 'react';
-import './footer.css';
+import React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import './styles/footer.css'
 
 const Footer = () => {
     return (
         <footer>
-            <div className="copyright">
-                Created by Nora Camacho for © Academlo 2023
-            </div>
             <div className="social-networks">
                 <a href="https://www.linkedin.com/in/noraelisacamacho/">
                     <LinkedInIcon />
@@ -17,8 +14,11 @@ const Footer = () => {
                     <GitHubIcon />
                 </a>
             </div>
+            <div className="copyright">
+                Created by Nora Camacho for © Academlo 2023
+            </div>
         </footer>
     );
-};
+}
 
-export default Footer;
+export default Footer

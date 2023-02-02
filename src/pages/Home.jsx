@@ -9,6 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import './styles/home.css'
 import { Col, Row } from 'react-bootstrap';
 import SortProductsPerPrice from '../components/Home/SortProductsPerPrice';
+import Footer from '../components/shared/Footer';
 
 const Home = () => {
     const products = useSelector(state => state.products);
@@ -66,8 +67,6 @@ const Home = () => {
                 </div>
             </Col>
         </Row>
-        
-        
     </div>
   )
 }
