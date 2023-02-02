@@ -12,13 +12,13 @@ const Purchases = () => {
     const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases';
       axios.get(URL, loadConfiguration())
         .then(response => {
-          console.log(response)
+          // console.log(response)
           setUsersPurchases(response?.data);
         })
         .catch(error => console.log('error', error))
   },[])
 
-  console.log(usersPurchases);
+  // console.log(usersPurchases);
 
 
   return (

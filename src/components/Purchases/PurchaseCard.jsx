@@ -1,15 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles/purchaseCard.css'
 
 const PurchaseCard = ({purchase}) => {
 
-
-    
-    console.log(purchase);
+    const navigate = useNavigate();   
+    // console.log('purchase', purchase);
     const purchaseDate = new Date(purchase?.createdAt)
     const options = {year: 'numeric', month: 'long', day: 'numeric' };
+
+    const handleClick = () => {
+        navigate(`/product/${purchase.product.id}`);
+      } 
+
   return (
-    <div className='purchases__main__container'>
+    <div className='purchases__main__container' onClick={handleClick}>
         {/* <h3>{purchaseDate.toLocaleDateString('en-US', options)}</h3> */}
             <ul className='purchases__item__container'>
                 {

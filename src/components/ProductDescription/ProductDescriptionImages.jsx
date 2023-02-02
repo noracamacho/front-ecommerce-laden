@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 const ProductDescriptionImages = ({ productImages }) => {
-  console.log(productImages);
+  // console.log(productImages);
 
   return (
     <Carousel variant="dark"  className="carousel-inner__img">
