@@ -51,6 +51,10 @@
     height: 2rem;
     margin-top: .5rem;
 }
+#email, 
+#password {
+    outline: none;
+}
 .logout__card {
     position: relative;
     top: 10rem;
