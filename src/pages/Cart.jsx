@@ -46,13 +46,13 @@ const Cart = () => {
                 ))
             }
         </div>
-        <footer>
+        <div>
             <div>Total:</div>
             <p>
                 { userCartProducts ? getTotalPrice() : 0 }
             </p>
             <button className='chechout__btn' onClick={handleCheckout}>Checkout</button>
-        </footer>
+        </div>
     </section>
   )
 }

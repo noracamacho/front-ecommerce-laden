@@ -84,7 +84,7 @@ function App() {
           </Container>
 
         </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
