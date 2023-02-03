@@ -21,7 +21,7 @@ const CartProduct = ({product}) => {
       })
       .catch(error => console.log(error))
   }
-  console.log(product)
+  // console.log(product)
 
   // const [quantityCart, setQuantityCart] = useState(product?.quantity);
   
@@ -43,8 +43,8 @@ const CartProduct = ({product}) => {
   
   
   const updateQuantity = (quantity) => {
-    dispatch(updateQuantityThunk(product.id,  quantity  ))
-    console.log('updateq', product)
+    if(quantity - 1 >= 0) dispatch(updateQuantityThunk(product.id,  quantity  ))
+    // console.log('updateq', product)
   }
   // console.log('1', quantityCart)
   // console.log(updateCartNumber, 'updateCartNumber')
