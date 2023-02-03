@@ -4,7 +4,7 @@ import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined
 import './cartProduct.css';
 import axios from 'axios';
 import loadConfiguration from '../../utils/loadConfiguration';
-import { getUserCartThunk } from '../../store/slices/cart.slice';
+import { getUserCartThunk, updateQuantityThunk } from '../../store/slices/cart.slice';
 import { useDispatch } from 'react-redux';
 
 const CartProduct = ({product}) => {
@@ -28,12 +28,23 @@ const CartProduct = ({product}) => {
 
     const handleIncrement = () => {
         setQuantityCart(quantityCart + 1);
+        updateQuantity(quantityCart)
     }
     const handleDecrement = () => {
         if(quantityCart - 1 > 0){
             setQuantityCart(quantityCart - 1);
+            updateQuantity(quantityCart)
+
         }
     }
+
+    const updateQuantity = (quantity) => {
+      dispatch(updateQuantityThunk(
+          product.id,
+          { quantity }
+      ))
+  }
+
 
   return (
     <article className='cart__product__card'>
@@ -54,7 +65,7 @@ const CartProduct = ({product}) => {
         
         <div className='cart__total_per__product'>
             <div>Price:</div>
-            <div className='total__price'>$ {product.product?.price} </div>
+            <div className='total__price'>$ {product.product?.price * product.quantity} </div>
         </div>
     </article>
   )
