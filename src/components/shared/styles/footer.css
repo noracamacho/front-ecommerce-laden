@@ -24,19 +24,19 @@
 .footer .social-networks {
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: .7rem;
+    margin-top: .7rem;
     /* text-align: center; */
 }
 .footer .social-networks a {
     display: inline-block;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 50%;
     background: #50504f;
     margin: 0 10px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2.4;
     display: flex;
     justify-content: center;
