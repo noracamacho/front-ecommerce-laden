@@ -3,23 +3,16 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { getAllProductsThunk } from './store/slices/products.slice'
 import { useEffect } from 'react'
-// import axios from 'axios'
 import ProductId from './pages/ProductId'
-// import ProductDescription from './components/ProductDetails/ProductDescription'
 import Home from './pages/Home';
 import Login from './pages/Login'
 import './App.css'
-// import { getUserCartThunk } from './store/slices/cart.slice'
-// import AppNavBar2 from './components/shared/AppNavBar2'
 import Cart from './pages/Cart'
-// import SearchInput from './components/shared/SearchInput'
 import AppNavBar from './components/shared/AppNavBar'
 import Purchases from './pages/Purchases'
 import ProtectedRoutes from './components/ProtectedRoutes';
 import LoadingScreen from './components/loadingScreen/LoadingScreen';
-// import Footer from './components/Footer/Footer'
 import { useSelector } from 'react-redux'
-import { Container } from 'react-bootstrap'
 import Footer from './components/shared/Footer'
 
 function App() {
@@ -68,8 +61,6 @@ function App() {
         <AppNavBar />
         <div>
           { isLoading && <LoadingScreen />}
-
-          {/* <Container className='my-5' > */}
           <Routes>
             <Route path='/' element={ <Home />}/>
             <Route path='/login' element={ <Login />}/>
@@ -81,8 +72,6 @@ function App() {
               <Route path='/cart' element={ <Cart />}/>
             </Route>
           </Routes>
-          {/* </Container> */}
-
         </div>
       <Footer />
     </div>

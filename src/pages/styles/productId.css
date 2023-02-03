@@ -6,9 +6,10 @@
     margin-bottom: 3rem;
 }
 .produc__id__container {
+    position: relative;
     width: 85%;
     margin: 0 auto;
-    top: 0;
+    top: 5rem;
 
 }
 .product__description__container {

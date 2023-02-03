@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import './cartProduct.css';
 import axios from 'axios';
@@ -25,24 +24,28 @@ const CartProduct = ({product}) => {
   console.log(product)
 
   const [quantityCart, setQuantityCart] = useState(product?.quantity);
+  console.log('1', quantityCart)
+
+  const updateCartNumber = {
+    quantity: quantityCart
+  }
 
     const handleIncrement = () => {
         setQuantityCart(quantityCart + 1);
-        updateQuantity(quantityCart)
+        console.log('qc', quantityCart)
+        updateQuantity(updateCartNumber)
     }
     const handleDecrement = () => {
-        if(quantityCart - 1 > 0){
+        if(quantityCart - 1 >= 0){
             setQuantityCart(quantityCart - 1);
-            updateQuantity(quantityCart)
-
+            updateQuantity(updateCartNumber);
         }
     }
+    
 
     const updateQuantity = (quantity) => {
-      dispatch(updateQuantityThunk(
-          product.id,
-          { quantity }
-      ))
+      dispatch(updateQuantityThunk(product.id,  quantity  ))
+      console.log(product)
   }
 
 
@@ -56,7 +59,7 @@ const CartProduct = ({product}) => {
             <h3 className='cart__quantity__title'>{product.product?.title}</h3>
             <div className='quantity__container'>
               <div className='quantity__icon' onClick={handleDecrement}>-</div>
-              <div className='quantity'>{quantityCart}</div>
+              <div className='quantity'>{product?.quantity}</div>
               <div className='quantity__icon'onClick={handleIncrement}>+</div>
             </div>
           </div>
@@ -65,7 +68,7 @@ const CartProduct = ({product}) => {
         
         <div className='cart__total_per__product'>
             <div>Price:</div>
-            <div className='total__price'>$ {product.product?.price * product.quantity} </div>
+            <div className='total__price'>$ {product.product?.price * product?.quantity} </div>
         </div>
     </article>
   )
