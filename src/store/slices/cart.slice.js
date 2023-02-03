@@ -27,6 +27,8 @@ export const getUserCartThunk = () => (dispatch) => {
 }
 
 export const updateQuantityThunk = (id, quantity) => (dispatch) => {
+    dispatch(setIsLoading(true));
     axios.put('https://e-commerce-api-v2.academlo.tech/api/v1/cart/'+id, quantity, loadConfiguration())
         .then(() => dispatch(getUserCartThunk()))
+        .finally(() => dispatch(setIsLoading(false)));
 }

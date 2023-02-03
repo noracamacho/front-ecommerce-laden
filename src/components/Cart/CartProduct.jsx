@@ -63,7 +63,6 @@ const CartProduct = ({product}) => {
               <div className='quantity__icon'onClick={handleIncrement}>+</div>
             </div>
           </div>
-            {/* <h4>{product.product?.brand}</h4> */}
          <button className='cart__product__buton' onClick={handleDelete}><DeleteForeverOutlinedIcon /></button>
         
         <div className='cart__total_per__product'>
