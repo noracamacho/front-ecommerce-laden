@@ -1,4 +1,3 @@
-import { CleaningServices } from "@mui/icons-material";
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import loadConfiguration from "../../utils/loadConfiguration";
@@ -24,7 +23,6 @@ export const getUserCartThunk = () => (dispatch) => {
     axios.get(URL, loadConfiguration())
         .then(response => dispatch(setCartGlobal(response.data)))
         .finally(() => dispatch(setIsLoading(false)));
-        // .catch(error => console.log(error))
 }
 
 export const updateQuantityThunk = (id, quantity) => (dispatch) => {
@@ -33,9 +31,6 @@ export const updateQuantityThunk = (id, quantity) => (dispatch) => {
         quantity: quantity
     }
     axios.put('https://e-commerce-api-v2.academlo.tech/api/v1/cart/'+id, newQuantity, loadConfiguration())
-        .then(()=>  {
-            // console.log(response.data);
-            dispatch(getUserCartThunk())
-        })
+        .then(()=> dispatch(getUserCartThunk()))
         .finally(() => dispatch(setIsLoading(false)));
 }

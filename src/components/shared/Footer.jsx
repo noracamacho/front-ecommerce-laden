@@ -5,7 +5,10 @@ import './styles/footer.css'
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='footer'>
+            <div className="copyright">
+                Built by Nora Camacho for © Academlo 2023
+            </div>
             <div className="social-networks">
                 <a href="https://www.linkedin.com/in/noraelisacamacho/">
                     <LinkedInIcon />
@@ -13,9 +16,6 @@ const Footer = () => {
                 <a href="https://github.com/noracamacho">
                     <GitHubIcon />
                 </a>
-            </div>
-            <div className="copyright">
-                Built by Nora Camacho for © Academlo 2023
             </div>
         </footer>
     );

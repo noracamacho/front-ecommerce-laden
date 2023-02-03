@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import './cartProduct.css';
 import axios from 'axios';
@@ -21,33 +21,11 @@ const CartProduct = ({product}) => {
       })
       .catch(error => console.log(error))
   }
-  // console.log(product)
-
-  // const [quantityCart, setQuantityCart] = useState(product?.quantity);
-  
-  // const updateCartNumber = {
-  //   quantity: quantityCart
-  // }
-  
-  // const handleIncrement = () => {
-  //   setQuantityCart(quantityCart + 1);
-  //   console.log('qc', quantityCart)
-  //   updateQuantity(updateCartNumber)
-  // }
-  // const handleDecrement = () => {
-  //   if(quantityCart - 1 >= 0){
-  //     setQuantityCart(quantityCart - 1);
-  //     updateQuantity(updateCartNumber);
-  //   }
-  // }
   
   
   const updateQuantity = (quantity) => {
     if(quantity - 1 >= 0) dispatch(updateQuantityThunk(product.id,  quantity  ))
-    // console.log('updateq', product)
   }
-  // console.log('1', quantityCart)
-  // console.log(updateCartNumber, 'updateCartNumber')
 
 
   return (

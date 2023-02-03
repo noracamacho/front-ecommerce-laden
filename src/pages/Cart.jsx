@@ -7,8 +7,6 @@ import { getUserCartThunk } from '../store/slices/cart.slice'
 import loadConfiguration from '../utils/loadConfiguration'
 import './styles/cart.css'
 
-
-
 const Cart = () => {
 
     const dispatch = useDispatch();

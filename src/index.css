@@ -32,6 +32,12 @@ a {
     text-decoration: none;
     font-family: inherit;
 }
+.App {
+    position: relative;
+    /* background-color: red; */
+    padding-bottom: 20rem;
+    /* height: fit-content !important; */
+}
 .search__section {
     position: relative;
     display: flex;
@@ -75,3 +81,4 @@ a {
 .nav-link {
     color: white !important;
 }
+
