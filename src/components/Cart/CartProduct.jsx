@@ -23,30 +23,31 @@ const CartProduct = ({product}) => {
   }
   console.log(product)
 
-  const [quantityCart, setQuantityCart] = useState(product?.quantity);
-  console.log('1', quantityCart)
-
-  const updateCartNumber = {
-    quantity: quantityCart
+  // const [quantityCart, setQuantityCart] = useState(product?.quantity);
+  
+  // const updateCartNumber = {
+  //   quantity: quantityCart
+  // }
+  
+  // const handleIncrement = () => {
+  //   setQuantityCart(quantityCart + 1);
+  //   console.log('qc', quantityCart)
+  //   updateQuantity(updateCartNumber)
+  // }
+  // const handleDecrement = () => {
+  //   if(quantityCart - 1 >= 0){
+  //     setQuantityCart(quantityCart - 1);
+  //     updateQuantity(updateCartNumber);
+  //   }
+  // }
+  
+  
+  const updateQuantity = (quantity) => {
+    dispatch(updateQuantityThunk(product.id,  quantity  ))
+    console.log('updateq', product)
   }
-
-    const handleIncrement = () => {
-        setQuantityCart(quantityCart + 1);
-        console.log('qc', quantityCart)
-        updateQuantity(updateCartNumber)
-    }
-    const handleDecrement = () => {
-        if(quantityCart - 1 >= 0){
-            setQuantityCart(quantityCart - 1);
-            updateQuantity(updateCartNumber);
-        }
-    }
-    
-
-    const updateQuantity = (quantity) => {
-      dispatch(updateQuantityThunk(product.id,  quantity  ))
-      console.log(product)
-  }
+  // console.log('1', quantityCart)
+  // console.log(updateCartNumber, 'updateCartNumber')
 
 
   return (
@@ -58,9 +59,9 @@ const CartProduct = ({product}) => {
           <div className='cart__quantity'>
             <h3 className='cart__quantity__title'>{product.product?.title}</h3>
             <div className='quantity__container'>
-              <div className='quantity__icon' onClick={handleDecrement}>-</div>
+              <div className='quantity__icon' onClick={() => updateQuantity(product?.quantity - 1)}>-</div>
               <div className='quantity'>{product?.quantity}</div>
-              <div className='quantity__icon'onClick={handleIncrement}>+</div>
+              <div className='quantity__icon'onClick={() => updateQuantity(product?.quantity + 1)}>+</div>
             </div>
           </div>
          <button className='cart__product__buton' onClick={handleDelete}><DeleteForeverOutlinedIcon /></button>

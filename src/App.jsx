@@ -6,7 +6,6 @@ import { useEffect } from 'react'
 import ProductId from './pages/ProductId'
 import Home from './pages/Home';
 import Login from './pages/Login'
-import './App.css'
 import Cart from './pages/Cart'
 import AppNavBar from './components/shared/AppNavBar'
 import Purchases from './pages/Purchases'
@@ -18,7 +17,7 @@ import Footer from './components/shared/Footer'
 function App() {
 
   const isLoading = useSelector(state => state.isLoading)
-  //! Despacha las acciones y los thinks
+  //! Despacha las acciones y los thunks
   const dispatch = useDispatch();
 
   // Thunks
