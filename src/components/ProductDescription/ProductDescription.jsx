@@ -24,7 +24,9 @@ const ProductDescription = ({product}) => {
 
     const handleAddButton = () => {
         console.log('product', product.id);
-        const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart';
+        // const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart';
+        const URL = 'https://ecommerceapp-verv.onrender.com/cart';
+
         const data = {
             quantity: quantity,
             productId: product.id

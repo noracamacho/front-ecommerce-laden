@@ -10,7 +10,7 @@ import './styles/cart.css'
 const Cart = () => {
 
     const dispatch = useDispatch();
-    const navigate = useNavigate
+    const navigate = useNavigate();
 
     // Callback - the global state that needs to be accessed (state.cart)
     const userCartProducts = useSelector(state => state.cart)
