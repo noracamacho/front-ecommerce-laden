@@ -29,7 +29,8 @@ const Cart = () => {
     }
 
     const handleCheckout = () => {
-        const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases';
+        // const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases';
+        const URL = 'https://ecommerceapp-verv.onrender.com/purchases';
         const data = {
             street: "San Jose 2312",
             colony: "La Virgen",

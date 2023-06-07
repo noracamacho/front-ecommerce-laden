@@ -10,7 +10,8 @@ const Purchases = () => {
   const [usersPurchases, setUsersPurchases] = useState([]);
 
   useEffect(() => {
-    const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases';
+    // const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases';
+    const URL = 'https://ecommerceapp-verv.onrender.com/purchases';
       axios.get(URL, loadConfiguration())
         .then(response => {
           // console.log(response)

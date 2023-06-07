@@ -10,7 +10,8 @@ const CategoryFilter = ({setInputSearchValue}) => {
     const [categories, setCategories] = useState();
 
     useEffect(() => {
-        const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/categories';
+        // const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/categories';
+        const URL = 'https://ecommerceapp-verv.onrender.com/categories';
         axios.get(URL)
             .then(response => setCategories(response.data))
             .catch(error => console.log('error', error));

@@ -11,7 +11,8 @@ const CartProduct = ({product}) => {
   const dispatch = useDispatch()
 
   const handleDelete = () => {
-    const URL = `https://e-commerce-api-v2.academlo.tech/api/v1/cart/${product.id}`
+    // const URL = `https://e-commerce-api-v2.academlo.tech/api/v1/cart/${product.id}`
+    const URL = `https://ecommerceapp-verv.onrender.com/cart/${product.id}`
     // Token Beater -> loadConfiguration
     axios.delete(URL, loadConfiguration())
       .then(response => {
@@ -31,7 +32,7 @@ const CartProduct = ({product}) => {
   return (
     <article className='cart__product__card'>
         <div className='cart__img__container'>
-          <img  className='cart__img' src={product.product.images[2].url} alt="" />
+          <img  className='cart__img' src={product.product.productImgs[2].url} alt="" />
         </div>
         
           <div className='cart__quantity'>

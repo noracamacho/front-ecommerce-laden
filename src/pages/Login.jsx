@@ -36,7 +36,8 @@ const Login = () => {
     }
     // Users information
     useEffect(() => {
-        const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/me';
+        // const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/me';
+        const URL = 'https://ecommerceapp-verv.onrender.com/users/me';
           axios.get(URL, loadConfiguration())
             .then(response => {
             //   console.log(response?.data)
@@ -54,8 +55,6 @@ const Login = () => {
         })
         .catch(error => console.log('error', error))
       }, [])
-
-    //   console.log(userData);
 
     useEffect(() => {
         const condition = localStorage.getItem('token') ? true : false;
@@ -111,6 +110,10 @@ const Login = () => {
                                 <input type="password" id="password" {...register("password")} />
                             </div>
                             <button className='login__btn'>Login</button>
+                            <p className='sign_up_msg'>
+                                Don't have a account? Sign Up
+                                {/* Don&apos;t have an account? <Link to="/signup">Sign up</Link> */}
+                            </p>
                         </form>
                     </div>
                 </div>

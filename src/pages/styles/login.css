@@ -1,7 +1,7 @@
 .logout__container,
 .login__container {
     position: relative;
-    top: 17rem;
+    top: 10rem;
     height: auto;
     display: flex;
     align-items: center;
@@ -57,6 +57,12 @@
 #email, 
 #password {
     outline: none;
+}
+.sign_up_msg {
+    font-size: .9rem;
+    text-align: left;
+    padding-top: .7rem;
+    
 }
 .logout__card {
     position: relative;

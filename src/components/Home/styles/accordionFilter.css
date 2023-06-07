@@ -5,8 +5,8 @@
 .accordion__filter {
     /* position: relative; */
     /* position: absolute; */
-    max-width: fit-content;
-    /* width: 13.5rem; */
+    /* max-width: fit-content; */
+    width: 12rem;
     /* left: 5rem; */
     /* top: 18rem; */
 }

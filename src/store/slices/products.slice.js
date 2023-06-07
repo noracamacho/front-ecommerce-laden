@@ -20,7 +20,7 @@ export const productsSlice = createSlice({
 //? Thunk get all products
 export const getAllProductsThunk = () => (dispatch) => {
     dispatch(setIsLoading(true));
-    const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/products'
+    const URL = 'https://ecommerceapp-verv.onrender.com/products'
     axios.get(URL)
     .then(response => dispatch(setProductsGlobal(response.data)))
     .finally(() => dispatch(setIsLoading(false)));
@@ -29,7 +29,7 @@ export const getAllProductsThunk = () => (dispatch) => {
 // ? Thunk to get products by category
 export const getProductsByCategoryIdThunk = (id) => (dispatch) => {
     dispatch(setIsLoading(true));
-    const URL = `https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${id}`
+    const URL = `https://ecommerceapp-verv.onrender.com/products?categoryId=${id}`
     axios.get(URL)
     .then(response => dispatch(setProductsGlobal(response.data)))
     .finally(() => dispatch(setIsLoading(false)));

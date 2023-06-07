@@ -17,7 +17,8 @@ const ProductDetails = () => {
     const allProductsGlobal = useSelector(state => state.products);
 
     useEffect(() => {
-        const URL = `https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`
+        // const URL = `https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`
+        const URL = `https://ecommerceapp-verv.onrender.com/products/${id}`
         axios
         .get(URL)
         .then(response => setProduct(response.data))
@@ -34,7 +35,7 @@ const ProductDetails = () => {
   return (
     <div className='produc__id__container'>
         <div className='product__description__container'>
-            <ProductDescriptionImages productImages={product?.images} />
+            <ProductDescriptionImages productImages={product?.productImgs} />
             <ProductDescription  product={product}/>
         </div>
         <div>

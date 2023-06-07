@@ -19,8 +19,8 @@ const ProductsCard = ({product}) => {
   // Add to cart using bearer token
   const handleCardAddBtn = (e) => {
     e.stopPropagation();
-    const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart';
-
+    // const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart';
+    const URL = 'https://ecommerceapp-verv.onrender.com/cart';
     const addToCartData = {
       productId: product.id,
       quantity: 1
@@ -38,8 +38,8 @@ const ProductsCard = ({product}) => {
   return (
     <article className='product__card' onClick={handleClick}>
       <header className='product__card__header'>
-        <img className='product__card__img' src={product?.images[0].url} alt="product image" />
-        <img className='product__card__img' src={product?.images[1].url} alt="product image" />
+        <img className='product__card__img' src={product?.productImgs[0].url} alt="product image" />
+        <img className='product__card__img' src={product?.productImgs[1].url} alt="product image" />
       </header>
         <section className='product__card__body'>
           <article className='product__card__upper__body'>
