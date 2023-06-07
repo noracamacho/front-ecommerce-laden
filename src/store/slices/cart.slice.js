@@ -31,7 +31,8 @@ export const updateQuantityThunk = (id, quantity) => (dispatch) => {
     const newQuantity = {
         quantity: quantity
     }
-    axios.put('https://ecommerceapp-verv.onrender.com/cart/'+id, newQuantity, loadConfiguration())
+    // axios.put('https://e-commerce-api-v2.academlo.tech/api/v1/cart/'+id, newQuantity, loadConfiguration())
+    axios.put(`https://ecommerceapp-verv.onrender.com/cart/${id}`, newQuantity, loadConfiguration())
         .then(()=> dispatch(getUserCartThunk()))
         .finally(() => dispatch(setIsLoading(false)));
 }

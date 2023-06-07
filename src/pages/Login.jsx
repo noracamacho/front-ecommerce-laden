@@ -18,7 +18,8 @@ const Login = () => {
 
     // Capture form's data & send it
     const submitForm = (formData) => {
-        const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/login'
+        // const URL = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/login'
+        const URL = 'https://ecommerceapp-verv.onrender.com/users/login'
         axios.post(URL, formData)
             .then(response => {
                 // setUserData(response);

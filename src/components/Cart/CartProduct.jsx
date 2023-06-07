@@ -6,7 +6,7 @@ import loadConfiguration from '../../utils/loadConfiguration';
 import { getUserCartThunk, updateQuantityThunk } from '../../store/slices/cart.slice';
 import { useDispatch } from 'react-redux';
 
-const CartProduct = ({product}) => {
+const CartProduct = ({ product }) => {
 
   const dispatch = useDispatch()
 
@@ -28,11 +28,13 @@ const CartProduct = ({product}) => {
     if(quantity - 1 >= 0) dispatch(updateQuantityThunk(product.id,  quantity  ))
   }
 
+  // console.log('product', product.product?.productImgs?.[2]?.url);
+  // console.log('product', product.product.productImgs[0].url);
 
   return (
     <article className='cart__product__card'>
         <div className='cart__img__container'>
-          <img  className='cart__img' src={product.product.productImgs[2].url} alt="" />
+          <img  className='cart__img' src={product.product?.productImgs[0]?.url} alt="" />
         </div>
         
           <div className='cart__quantity'>

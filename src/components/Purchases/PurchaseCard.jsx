@@ -19,7 +19,7 @@ const PurchaseCard = ({purchase}) => {
                 {
                    <li className='purchase__item'>
                     <div className='image'>
-                        <img src={purchase?.product.images[2].url} alt="product image" style={{height:'4rem', width:'auto'}} />
+                        <img src={purchase?.product.productImgs[2].url} alt="product image" style={{height:'4rem', width:'auto'}} />
                     </div>
                         <div className='name'>{purchase?.product.title}</div>
                         <div className='date'>{purchaseDate.toLocaleDateString()}</div>
